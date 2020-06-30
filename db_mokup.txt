@@ -1,0 +1,25 @@
+Table users {
+  id int [pk]
+  email text [not null]
+  nickname text
+  name text
+  password text
+  gender text
+  b_date text 
+  phone_number text
+  profile_picture int
+}
+
+Table photos {
+  id int [pk]
+  base64image text
+}
+
+Table follows{
+  following_user int 
+  followed_user int
+}
+
+ref: users.id < follows.following_user
+ref: users.id < follows.followed_user
+ref: photos.id - users.profile_picture
