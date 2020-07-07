@@ -1,11 +1,12 @@
+// Tables
 Table users {
   id int [pk]
-  email text [not null]
+  email text
   nickname text
   name text
   password text
   gender text
-  b_date text 
+  b_date text
   phone_number text
   profile_picture int
 }
@@ -15,43 +16,59 @@ Table photos {
   base64image text
 }
 
-Table follows{
-  following_user int 
+Table follows {
+  id int [pk]
+  following_user int
   followed_user int
 }
 
-Table posts{
-  id [pk]
-  description text
-  photo_id int
-  post_id text
-}
-
-Table likes{
+Table posts {
   id int [pk]
   user_id int
-  post_id int
+  description text 
+  photo_id int
+  post_date text
 }
 
-Table photos_in_post{
+Table likes {
   id int [pk]
-  post_id int
+  user_id int
+  posts_id int
+  like_date text
+}
+
+Table comments_likes {
+  id int [pk]
+  user_id int
+  comment_id int
+}
+
+Table photos_in_posts {
+  id int [pk]
+  posts_id int
   photo_id int
 }
 
-Table comments{
+Table comments {
   id int [pk]
   user_id int
   comment_date text
   content text
+  posts_id text
 }
 
-//Relations
+
+
+// Relations
 ref: users.id < follows.following_user
 ref: users.id < follows.followed_user
 ref: photos.id - users.profile_picture
-ref: posts.id < likes.post_id
+ref: posts.id < likes.posts_id
 ref: users.id < likes.user_id
-ref: photos.id < photos_in_post.photo_id
-ref: posts.id < photos_in_post.photo_id
-ref: posts.id < comments.post_id
+ref: photos.id < photos_in_posts.photo_id
+ref: posts.id < photos_in_posts.posts_id
+ref: posts.id < comments.posts_id
+ref: comments.id < comments_likes.comment_id
+ref: users.id < comments_likes.user_id
+ref: users.id < comments.user_id
+ref: users.id < posts.user_id
