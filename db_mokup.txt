@@ -20,6 +20,38 @@ Table follows{
   followed_user int
 }
 
+Table posts{
+  id [pk]
+  description text
+  photo_id int
+  post_id text
+}
+
+Table likes{
+  id int [pk]
+  user_id int
+  post_id int
+}
+
+Table photos_in_post{
+  id int [pk]
+  post_id int
+  photo_id int
+}
+
+Table comments{
+  id int [pk]
+  user_id int
+  comment_date text
+  content text
+}
+
+//Relations
 ref: users.id < follows.following_user
 ref: users.id < follows.followed_user
 ref: photos.id - users.profile_picture
+ref: posts.id < likes.post_id
+ref: users.id < likes.user_id
+ref: photos.id < photos_in_post.photo_id
+ref: posts.id < photos_in_post.photo_id
+ref: posts.id < comments.post_id
