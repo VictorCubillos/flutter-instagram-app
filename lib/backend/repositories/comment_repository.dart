@@ -1,4 +1,4 @@
-import 'package:flutter_instagram_app/backend/models/comment.dart';
+import '../models/comment.dart';
 
 abstract class CommentRepository {
   Future<Comment> add(Comment newComment);

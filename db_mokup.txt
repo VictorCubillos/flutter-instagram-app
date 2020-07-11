@@ -1,3 +1,6 @@
+
+// To visualize this, use: https://dbdiagram.io/d
+
 // Tables
 Table users {
   id int [pk]

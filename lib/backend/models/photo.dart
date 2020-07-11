@@ -1,15 +1,15 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class Photo{
+class Photo {
   int id;
   String url;
-
-  Photo(this.id, this.url);
-
+  
   Image get data{
-    return Image.network("http://smallville.marianobayona.com/goku.jpg");
+    // This will return an image soon!
+    return Image.network("https://i.ytimg.com/vi/fq4N0hgOWzU/maxresdefault.jpg");
   }
-  set data(Image image){
 
+  set data(Image image){
+    // This will upload the image to the S3 and DB!
   }
 }

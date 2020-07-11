@@ -1,13 +1,12 @@
-import 'dart:html';
-
-class Comment{
+class Comment {
   int id;
   int userId;
   DateTime commentDate;
   String content;
   int postId;
-  
-   static Comment fromNewComment(int id, Comment otherComment) {
+
+
+  static Comment fromNewComment(int id, Comment otherComment) {
     var comment = new Comment();
     comment.userId = otherComment.userId;
     comment.commentDate = otherComment.commentDate;
@@ -16,4 +15,5 @@ class Comment{
     comment.id = id;
     return comment;
   }
+  
 }

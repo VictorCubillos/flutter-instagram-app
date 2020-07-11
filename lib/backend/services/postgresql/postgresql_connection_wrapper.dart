@@ -1,6 +1,7 @@
 import 'package:postgres/postgres.dart';
 
-class PostreSQLConnectionWrapper {
+class PostgreSQLConnectionWrapper {
+
   PostgreSQLConnection _connection;
 
   PostgreSQLConnectionWrapper({
@@ -10,11 +11,12 @@ class PostreSQLConnectionWrapper {
     String username = "postgres",
     String password = "hwTFmdrRj1x3DzUlNhwN",
   }) {
-    _connection = new PostgreSQLConnection(host, port, db,
-        username: username, password: password);
+    _connection = new PostgreSQLConnection(host, port, db, username: username, password: password);
   }
 
   PostgreSQLConnection get connection {
-    return _connection;
+    
+    return _connection;    
   }
+
 }

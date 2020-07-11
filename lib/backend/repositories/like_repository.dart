@@ -1,12 +1,12 @@
-import 'package:flutter_instagram_app/backend/models/like.dart';
+import '../models/like.dart';
 
-abstract class LikeRepository{
-
-Like add(Like newLike);
-Like update(Like likeToUpdate);
-bool remove(int liketId);
-List<Like> finalAll;
-List<Like> findByPostId(int postId);
-List<Like> findByUserId(int userId);
-List<Like> findByCommentId(int commentId);
+abstract class LikeRepository {
+  Like add(Like newLike);
+  Like update(Like likeToUpdate);
+  bool remove(int likeId);
+  Like find(int likeId);
+  List<Like> findAll();
+  List<Like> findByUserId(int userId);
+  List<Like> findByPostId(int postId);
+  List<Like> findByCommentId(int commentId);
 }
