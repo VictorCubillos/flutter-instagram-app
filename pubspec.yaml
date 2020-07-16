@@ -21,6 +21,12 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  carousel_pro: ^1.0.0
+  carousel_slider: ^2.2.1
+  pinch_zoom_image:
+    git:
+        url: https://github.com/prasadsunny1/pinch_zoom_image.git
+        ref: master
   pull_to_refresh: ^1.6.0
   faker: ^1.2.1
   dynamic_theme: ^1.0.1

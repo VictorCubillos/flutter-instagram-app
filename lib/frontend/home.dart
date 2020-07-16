@@ -1,7 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_instagram_app/backend/models/photo.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+import 'widgets/image_slider.dart';
+import 'widgets/post_container.dart';
+import 'widgets/post_lower_bar.dart';
 import 'widgets/post_upper_barr.dart';
 
 class Home extends StatefulWidget {
@@ -32,6 +37,8 @@ class _HomeState extends State<Home> {
       setState(() {});
     }
 
+    final CarouselController _controller = CarouselController();
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -57,57 +64,12 @@ class _HomeState extends State<Home> {
         header: MaterialClassicHeader(),
         controller: _refreshController,
         onRefresh: _onRefresh,
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              PostUpperBar(),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.yellow,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.purpleAccent,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.redAccent,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.teal,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.green,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.lightBlue,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.lime,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.orange,
-              ),
-              Container(
-                height: 250,
-                width: double.infinity,
-                color: Colors.yellow,
-              ),
-            ],
-          ),
+        child: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          itemCount: 1000,
+          itemBuilder: (context, index) {
+            return PostContainer();
+          },
         ),
       ),
     );

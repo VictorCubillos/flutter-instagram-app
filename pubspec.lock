@@ -36,6 +36,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.7"
+  carousel_pro:
+    dependency: "direct main"
+    description:
+      name: carousel_pro
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.1"
   charcode:
     dependency: transitive
     description:
@@ -163,6 +177,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.0"
+  pinch_zoom_image:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "5e83229fd1ab37e59b049b93638d6d830ce73224"
+      url: "https://github.com/prasadsunny1/pinch_zoom_image.git"
+    source: git
+    version: "0.2.5"
   platform:
     dependency: transitive
     description:

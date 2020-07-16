@@ -40,6 +40,10 @@ class MyApp extends StatelessWidget {
         primaryIconTheme: IconThemeData(
           color: brightness == Brightness.light ? Colors.black87 : Colors.white,
         ),
+        iconTheme: IconThemeData(
+          color: brightness == Brightness.light ? Colors.black87 : Colors.white,
+          
+        ),
       ),
       themedWidgetBuilder: (context, theme) {
         return MaterialApp(
